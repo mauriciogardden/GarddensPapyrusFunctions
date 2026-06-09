@@ -138,17 +138,21 @@ IMPORTANT: I recomend to use akDecTopicInfo instead of akTopicInfo to compare, a
 
 
 #This will place a reference in a random location on the ground (terrain) around the target. You can also set other surfaces that the reference can be spawned in a formlist
-
+<br>
 **ObjectReference Function PlaceOnGround(ObjectReference center, Form akForm, Float minRadius, Float maxRadius, Bool avoidWater, Bool requireOutOfSight, Float zOffset = 0.0, Float minClearDistance = 64.0, FormList validSurfaceList = None) global native**
 
 **Recommended:**
+
 ;minRadius = 100
+
 ;maxRadius = 300
+
 ;zOffset = 0
+
 ;minClearDistance = 64
 
 #This will place a copy of an object reference at the target, with the same size (scale) values as the original one
-
+<br>
 **ObjectReference Function PlaceRefAtMe(ObjectReference akTarget, ObjectReference akSourceRef) global native**
 
 #Works like "AddItem", but specific for leveled lists and returns the number of itens that were added to the actor
