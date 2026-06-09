@@ -10,7 +10,7 @@ Here is the list of new functions it adds:
 #This stores the name of an actor value of an actor, to make it immune to changes made to the value (Currently not implemented)
 
 **Function SetImmuneAV(Actor akTarget, String[] avNames, Bool reflect = False, Float percent = 0.0) Global Native**
-
+<br>
 #This clears actor value of an actor, that was set to be immune (Currently not implemented)
 
 **Function ClearImmuneAV(Actor akTarget, String[] avNames) Global Native**
