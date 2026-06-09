@@ -1,6 +1,8 @@
 # GarddensPapyrusFunctions
 This is the source code of a Skyrim SKSE Plugin that adds new functions and events to papyrus.
-Please note that it was created with help of AI, as I'm no dev.
+Please note that it was created with help of AI, as I'm no dev. 
+
+This was created using the 'Hello World' template as a base: https://github.com/SkyrimScripting/SKSE_Templates
 
 Here is the list of new functions it adds:
 
