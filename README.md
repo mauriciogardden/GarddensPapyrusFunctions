@@ -64,46 +64,53 @@ kNonHostile
 # **Dialogue:**
 
 #The quest will listen for any line spoken on the dialogue menu
-Function RegisterForLineSpoken(Form akListener) Global Native
+
+**Function RegisterForLineSpoken(Form akListener) Global Native**
 
 #The quest will listen for a specif line spoken on the dialogue menu
-Function RegisterForSpecificLine(Form akListener, Form akTopic) Global Native
+
+**Function RegisterForSpecificLine(Form akListener, Form akTopic) Global Native**
 
 #The quest will listen for all lines spoken by an specific actor on the dialogue menu
-Function RegisterForSpeaker(Form akListener, Actor akSpeaker) Global Native
+
+**Function RegisterForSpeaker(Form akListener, Actor akSpeaker) Global Native**
 
 #The quest will listen for all lines of an quest spoken on the dialogue menu
-Function RegisterForQuestLines(Form akListener, Quest akQuest) Global Native
 
-Function UnregisterForLineSpoken(Form akListener) Global Native
+**Function RegisterForQuestLines(Form akListener, Quest akQuest) Global Native**
 
-Function UnregisterForSpecificLine(Form akListener, Form akTopic) Global Native
+**Function UnregisterForLineSpoken(Form akListener) Global Native**
 
-Function UnregisterForSpeaker(Form akListener, Actor akSpeaker) Global Native
+**Function UnregisterForSpecificLine(Form akListener, Form akTopic) Global Native**
 
-Function UnregisterForQuestLines(Form akListener, Quest akQuest) Global Native
+**Function UnregisterForSpeaker(Form akListener, Actor akSpeaker) Global Native**
 
-Event OnLineSpoken(ObjectReference akSpeaker, Form akTopicInfo, string akHexTopicInfo, int akDecTopicInfo, Form akTopicBranch, string akHexTopicBranch, int akDecTopicBranch, String akLine, int akFavorLevel)
-    #The quest will receive this event everytime a line starts being spoken in the dialogue menu
-    ; IMPORTANT: I recomend to use akDecTopicInfo instead of akTopicInfo to compare, as it's more reliable
-EndEvent
+**Function UnregisterForQuestLines(Form akListener, Quest akQuest) Global Native**
 
-Event OnPlayerChoice(ObjectReference akSpeaker, Form akTopicInfo, string akHexTopicInfo, int akDecTopicInfo, Form akTopicBranch, string akHexTopicBranch, int akDecTopicBranch, String akLine, int akFavorLevel)
-    #The quest will receive this event everytime the player chooses an option on dialogue menu
-    ; IMPORTANT: I recomend to use akDecTopicInfo instead of akTopicInfo to compare, as it's more reliable
-EndEvent
+#The quest will receive this event everytime a line starts being spoken in the dialogue menu
+IMPORTANT: I recomend to use akDecTopicInfo instead of akTopicInfo to compare, as it's more reliable
 
-Event OnLineEnd(ObjectReference akSpeaker, Form akTopicInfo, string akHexTopicInfo, int akDecTopicInfo, Form akTopicBranch, string akHexTopicBranch, int akDecTopicBranch, String akLine, int akFavorLevel)
-    #The quest will receive this event everytime a line finishes in the dialogue menu
-    ; IMPORTANT: I recomend to use akDecTopicInfo instead of akTopicInfo to compare, as it's more reliable
-EndEvent
+**Event OnLineSpoken(ObjectReference akSpeaker, Form akTopicInfo, string akHexTopicInfo, int akDecTopicInfo, Form akTopicBranch, string akHexTopicBranch, int akDecTopicBranch, String akLine, int akFavorLevel)**
 
-Function SetFavorPoints(Form akTopicInfo, int FavorLevel) Global Native
+#The quest will receive this event everytime the player chooses an option on dialogue menu
+IMPORTANT: I recomend to use akDecTopicInfo instead of akTopicInfo to compare, as it's more reliable
+    
+**Event OnPlayerChoice(ObjectReference akSpeaker, Form akTopicInfo, string akHexTopicInfo, int akDecTopicInfo, Form akTopicBranch, string akHexTopicBranch, int akDecTopicBranch, String akLine, int akFavorLevel)**
+
+#The quest will receive this event everytime a line finishes in the dialogue menu
+IMPORTANT: I recomend to use akDecTopicInfo instead of akTopicInfo to compare, as it's more reliable
+    
+**Event OnLineEnd(ObjectReference akSpeaker, Form akTopicInfo, string akHexTopicInfo, int akDecTopicInfo, Form akTopicBranch, string akHexTopicBranch, int akDecTopicBranch, String akLine, int akFavorLevel)**
+
 #Since favor points are unused in Skyrim, you can set and get it's value for lines to use as conditions. 
-int Function GetFavorPoints(Form akTopicInfo) Global Native
+
+**Function SetFavorPoints(Form akTopicInfo, int FavorLevel) Global Native**
+
+**int Function GetFavorPoints(Form akTopicInfo) Global Native**
 
 #This function will copy the audio/subtitle of the NewTopic and overwrite ONLY  the audio/subtitle of the TopicToChange.
-Function ReplaceTopicInfo(Form akNewTopic, Form akTopicToChange) Global Native
+
+**Function ReplaceTopicInfo(Form akNewTopic, Form akTopicToChange) Global Native**
 
 
 
@@ -111,15 +118,19 @@ Function ReplaceTopicInfo(Form akNewTopic, Form akTopicToChange) Global Native
 
 
 #This will place a reference in a random location on the ground (terrain) around the target. You can also set other surfaces that the reference can be spawned in a formlist
-ObjectReference Function PlaceOnGround(ObjectReference center, Form akForm, Float minRadius, Float maxRadius, Bool avoidWater, Bool requireOutOfSight, Float zOffset = 0.0, Float minClearDistance = 64.0, FormList validSurfaceList = None) global native
-;Recommended:
+
+**ObjectReference Function PlaceOnGround(ObjectReference center, Form akForm, Float minRadius, Float maxRadius, Bool avoidWater, Bool requireOutOfSight, Float zOffset = 0.0, Float minClearDistance = 64.0, FormList validSurfaceList = None) global native**
+
+**Recommended:**
 ;minRadius = 100
 ;maxRadius = 300
 ;zOffset = 0
 ;minClearDistance = 64
 
 #This will place a copy of an object reference at the target, with the same size (scale) values as the original one
-ObjectReference Function PlaceRefAtMe(ObjectReference akTarget, ObjectReference akSourceRef) global native
+
+**ObjectReference Function PlaceRefAtMe(ObjectReference akTarget, ObjectReference akSourceRef) global native**
 
 #Works like "AddItem", but specific for leveled lists and returns the number of itens that were added to the actor
-Int Function GiveLeveledLoot(Actor akActor, LeveledItem akList) Global Native
+
+**Int Function GiveLeveledLoot(Actor akActor, LeveledItem akList) Global Native**
