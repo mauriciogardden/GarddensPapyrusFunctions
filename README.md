@@ -38,25 +38,45 @@ Here is the list of new functions it adds:
 
 ## Tags:
 kDamage
+
 kDoT
+
 kDebuff
+
 kControl
+
 kMelee
+
 kRanged
+
 kSpell
+
 kConcentration
+
 kPowerAttack
+
 kSneakAttack
+
 kBashAttack
+
 kBlocked
+
 kFire
+
 kFrost
+
 kShock
+
 kPoison
+
 kTouch
+
 kAimed
+
 kTarget
+
 kHostile
+
 kNonHostile
 
 
@@ -64,19 +84,19 @@ kNonHostile
 # **Dialogue:**
 
 #The quest will listen for any line spoken on the dialogue menu
-
+<br>
 **Function RegisterForLineSpoken(Form akListener) Global Native**
 
 #The quest will listen for a specif line spoken on the dialogue menu
-
+<br>
 **Function RegisterForSpecificLine(Form akListener, Form akTopic) Global Native**
 
 #The quest will listen for all lines spoken by an specific actor on the dialogue menu
-
+<br>
 **Function RegisterForSpeaker(Form akListener, Actor akSpeaker) Global Native**
 
 #The quest will listen for all lines of an quest spoken on the dialogue menu
-
+<br>
 **Function RegisterForQuestLines(Form akListener, Quest akQuest) Global Native**
 
 **Function UnregisterForLineSpoken(Form akListener) Global Native**
@@ -89,27 +109,27 @@ kNonHostile
 
 #The quest will receive this event everytime a line starts being spoken in the dialogue menu
 IMPORTANT: I recomend to use akDecTopicInfo instead of akTopicInfo to compare, as it's more reliable
-
+<br>
 **Event OnLineSpoken(ObjectReference akSpeaker, Form akTopicInfo, string akHexTopicInfo, int akDecTopicInfo, Form akTopicBranch, string akHexTopicBranch, int akDecTopicBranch, String akLine, int akFavorLevel)**
 
 #The quest will receive this event everytime the player chooses an option on dialogue menu
 IMPORTANT: I recomend to use akDecTopicInfo instead of akTopicInfo to compare, as it's more reliable
-    
+<br>    
 **Event OnPlayerChoice(ObjectReference akSpeaker, Form akTopicInfo, string akHexTopicInfo, int akDecTopicInfo, Form akTopicBranch, string akHexTopicBranch, int akDecTopicBranch, String akLine, int akFavorLevel)**
 
 #The quest will receive this event everytime a line finishes in the dialogue menu
 IMPORTANT: I recomend to use akDecTopicInfo instead of akTopicInfo to compare, as it's more reliable
-    
+<br>    
 **Event OnLineEnd(ObjectReference akSpeaker, Form akTopicInfo, string akHexTopicInfo, int akDecTopicInfo, Form akTopicBranch, string akHexTopicBranch, int akDecTopicBranch, String akLine, int akFavorLevel)**
 
 #Since favor points are unused in Skyrim, you can set and get it's value for lines to use as conditions. 
-
+<br>
 **Function SetFavorPoints(Form akTopicInfo, int FavorLevel) Global Native**
 
 **int Function GetFavorPoints(Form akTopicInfo) Global Native**
 
 #This function will copy the audio/subtitle of the NewTopic and overwrite ONLY  the audio/subtitle of the TopicToChange.
-
+<br>
 **Function ReplaceTopicInfo(Form akNewTopic, Form akTopicToChange) Global Native**
 
 
