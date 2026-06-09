@@ -8,26 +8,33 @@ Here is the list of new functions it adds:
 # **Combat:**
 
 #This stores the name of an actor value of an actor, to make it immune to changes made to the value (Currently not implemented)
-Function SetImmuneAV(Actor akTarget, String[] avNames, Bool reflect = False, Float percent = 0.0) Global Native
+
+**Function SetImmuneAV(Actor akTarget, String[] avNames, Bool reflect = False, Float percent = 0.0) Global Native**
 
 #This clears actor value of an actor, that was set to be immune (Currently not implemented)
-Function ClearImmuneAV(Actor akTarget, String[] avNames) Global Native
+
+**Function ClearImmuneAV(Actor akTarget, String[] avNames) Global Native**
 
 #The quest will receive all OnAffected calls (NOT RECOMMENDED) - OnAffected does not need to be registered on magic effects and works like 'OnHit'
-Function RegisterForOnAffected(Form akListener) Global Native
+
+**Function RegisterForOnAffected(Form akListener) Global Native**
 
 #The quest will receive OnAffected calls created by the specific actor when it hits another
-Function RegisterForOnAffectedAggressor(Form akListener, Actor akAggressor) Global Native
+
+**Function RegisterForOnAffectedAggressor(Form akListener, Actor akAggressor) Global Native**
 
 #The quest will receive OnAffected calls created by the specific actor when it is hit
-Function RegisterForOnAffectedVictim(Form akListener, Actor akVictim) Global Native
+
+**Function RegisterForOnAffectedVictim(Form akListener, Actor akVictim) Global Native**
 
 #The quest will not receive OnAffected calls
-Function UnregisterForOnAffected(Form akListener) Global Native
 
-Event OnAffected(ObjectReference akAggressor, ObjectReference akVictim, Form akSource, int Tags)
-#This works like 'OnHit', but concentration effects are only accounted for once every second, and you can get some information about the hit through the tags (below)   
-EndEvent
+**Function UnregisterForOnAffected(Form akListener) Global Native**
+
+#This works like 'OnHit', but concentration effects are only accounted for once every second, and you can get some information about the hit through the tags (below)
+
+**Event OnAffected(ObjectReference akAggressor, ObjectReference akVictim, Form akSource, int Tags)**
+   
 
 ## Tags:
 kDamage
