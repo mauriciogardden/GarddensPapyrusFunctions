@@ -5,7 +5,7 @@ Please note that it was created with help of AI, as I'm no dev.
 Here is the list of new functions it adds:
 
 
-Combat:
+# **Combat:**
 
 #This stores the name of an actor value of an actor, to make it immune to changes made to the value (Currently not implemented)
 Function SetImmuneAV(Actor akTarget, String[] avNames, Bool reflect = False, Float percent = 0.0) Global Native
@@ -29,7 +29,7 @@ Event OnAffected(ObjectReference akAggressor, ObjectReference akVictim, Form akS
 #This works like 'OnHit', but concentration effects are only accounted for once every second, and you can get some information about the hit through the tags (below)   
 EndEvent
 
-Tags:
+## Tags:
 kDamage
 kDoT
 kDebuff
@@ -54,7 +54,7 @@ kNonHostile
 
 
 
-Dialogue:
+# **Dialogue:**
 
 #The quest will listen for any line spoken on the dialogue menu
 Function RegisterForLineSpoken(Form akListener) Global Native
@@ -100,8 +100,8 @@ Function ReplaceTopicInfo(Form akNewTopic, Form akTopicToChange) Global Native
 
 
 
+# **Itens and Objects:**
 
-Itens and Objects:
 
 #This will place a reference in a random location on the ground (terrain) around the target. You can also set other surfaces that the reference can be spawned in a formlist
 ObjectReference Function PlaceOnGround(ObjectReference center, Form akForm, Float minRadius, Float maxRadius, Bool avoidWater, Bool requireOutOfSight, Float zOffset = 0.0, Float minClearDistance = 64.0, FormList validSurfaceList = None) global native
